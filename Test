@@ -200,7 +200,7 @@ autofarm2:addToggle("Enabled", nil, function(value)
 		game.RunService.RenderStepped:connect(function()
 			if _G.On2 then
 			    workspace.Gravity = math.huge
-			    HumanoidRootPart.CFrame = CFrame.new(-79.9094696, 19.8263607, 9124.82124, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+			    HumanoidRootPart.CFrame = CFrame.new(-79.9094696, 19.8263607, 91924.82124, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			    fireproximityprompt(_G.Prox, 0)
 			else
 			    workspace.Gravity = 196.2 
