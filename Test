@@ -179,13 +179,13 @@ end)
 
 autofarm:addToggle("Enabled", nil, function(value)
 	_G.On = value
-	HumanoidRootPart.CFrame = CFrame.new(40.9094696, 21.8263607, 9624.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	HumanoidRootPart.CFrame = CFrame.new(40.9094696, 21.8263607, 19999.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	wait(0.1)
 	task_defer(function()
 		game.RunService.RenderStepped:connect(function()
 			task.wait(0.1)
 			if _G.On then
-				HumanoidRootPart.CFrame = CFrame.new(40.9094696, 21.8263607, 9624.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+				HumanoidRootPart.CFrame = CFrame.new(40.9094696, 21.8263607, 19999.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 				fireproximityprompt(_G.Prox, 0)
 			end
 		end)
@@ -200,7 +200,7 @@ autofarm2:addToggle("Enabled", nil, function(value)
 		game.RunService.RenderStepped:connect(function()
 			if _G.On2 then
 			    workspace.Gravity = math.huge
-			    HumanoidRootPart.CFrame = CFrame.new(-49.9094696, 21.8263607, 9624.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+			    HumanoidRootPart.CFrame = CFrame.new(-49.9094696, 21.8263607, 19999.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			    fireproximityprompt(_G.Prox, 0)
 			else
 			    workspace.Gravity = 196.2 
