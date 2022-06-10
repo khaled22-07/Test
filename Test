@@ -4,7 +4,7 @@ end
 wait()
 _G.On = false
 _G.On2 = false
-_G.auto = false
+_G.auto = true
 _G.multipier = 0
 local Codes = {
 	"strongman",
@@ -134,22 +134,22 @@ local farm = venyx:addPage("Farming", 5012544693)
 
 local page = venyx:addPage("Character", 5012544693)
 local settings = venyx:addPage("Settings", 5012544693)
-local autofarm = farm:addSection("الحصد السريع")
-local autofarm2 = farm:addSection("Auto Farm 2 (الحصد المتأخر)")
+local autofarm = farm:addSection("Auto Farm")
+local autofarm2 = farm:addSection("Auto Farm 2 (slower, but will not slow down like one above)")
 local autostrength = farm:addSection("Auto Strength")
-local char = page:addSection("القدرات")
-local mainsec = main:addSection("منيو الماب")
-local Settingss = settings:addSection("اعدادات")
+local char = page:addSection("Character")
+local mainsec = main:addSection("Main")
+local Settingss = settings:addSection("Settings")
 
-mainsec:addButton("اخذ جميع badges", function()
+mainsec:addButton("Get all badges", function()
 	GetBadges()
 end)
 
-mainsec:addButton("فتح جميع الابواب", function()
+mainsec:addButton("Break Exits", function()
 	BreakExits()
 end)
 
-mainsec:addButton("لاق سيرفر", function()
+mainsec:addButton("Lag Server", function()
 	LagServer()
 end)
 
@@ -157,7 +157,7 @@ Settingss:addButton("Rejoin Server", function()
 	game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 end)
 local oldpos = HumanoidRootPart.CFrame
-HumanoidRootPart.CFrame = CFrame.new(-86.9094696, 16.1263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+HumanoidRootPart.CFrame = CFrame.new(-79.9094696, 19.8263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 wait(0.25)
 HumanoidRootPart.CFrame = oldpos
 for _, v in pairs(area.DraggableItems:GetDescendants()) do
@@ -179,13 +179,13 @@ end)
 
 autofarm:addToggle("Enabled", nil, function(value)
 	_G.On = value
-	HumanoidRootPart.CFrame = CFrame.new(-86.9094696, 16.1263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	HumanoidRootPart.CFrame = CFrame.new(-79.9094696, 19.8263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	wait(0.1)
 	task_defer(function()
 		game.RunService.RenderStepped:connect(function()
 			task.wait(0.1)
 			if _G.On then
-				HumanoidRootPart.CFrame = CFrame.new(-86.9094696, 16.1263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+				HumanoidRootPart.CFrame = CFrame.new(-79.9094696, 19.8263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 				fireproximityprompt(_G.Prox, 0)
 			end
 		end)
@@ -193,14 +193,14 @@ autofarm:addToggle("Enabled", nil, function(value)
 end)
 autofarm2:addToggle("Enabled", nil, function(value)
 	_G.On2 = value
-	HumanoidRootPart.CFrame = CFrame.new(-86.9094696, 16.1263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	HumanoidRootPart.CFrame = CFrame.new(-79.9094696, 19.8263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	HumanoidRootPart.Anchored = false
 	wait(0.1)
 	task_defer(function()
 		game.RunService.RenderStepped:connect(function()
 			if _G.On2 then
 			    workspace.Gravity = math.huge
-			    HumanoidRootPart.CFrame = CFrame.new(-86.9094696, 16.1263607, 8124.82124, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+			    HumanoidRootPart.CFrame = CFrame.new(-79.9094696, 19.8263607, 8124.82129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			    fireproximityprompt(_G.Prox, 0)
 			else
 			    workspace.Gravity = 196.2 
